@@ -19,9 +19,9 @@ class Client:
             return token()
         except KeyError:
             print('Create account with phone number' + self.phone)
-            self.login()
+            self.sign_up()
             return token()
-    def login(self):
+    def sign_up(self):
         return requests.post('http://mlikeapiv21.yosarete.com:8092/api/user/create', headers = {
             'content-type': 'application/x-www-form-urlencoded; charset=utf-8',
             'accept-encoding': 'gzip'
