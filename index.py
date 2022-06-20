@@ -3,9 +3,9 @@ import mlike
 
 def main():
     n = input('Enter phone number: ')
-    r = {
-        'success': s,
-        'failed': f
+    result = {
+        'success': 0,
+        'failed': 0
     }
     
     while True:
@@ -13,12 +13,12 @@ def main():
             try:
                 status = mlike.Client(i).set_credit()['status']
                 if status == 200:
-                      r['success'] += 1
+                      result['success'] += 1
                 else:
-                    r['failed'] += 1
+                    result['failed'] += 1
             except:
                 sleep(10)
-            print(r, end = '\r')
+            print(result, end = '\r')
             sleep(30)
 
 main()
